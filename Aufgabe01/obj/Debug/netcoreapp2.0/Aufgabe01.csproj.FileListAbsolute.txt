@@ -1,0 +1,10 @@
+C:\Users\Dennis\Documents\GitHub\SoftwareDesign-Dennis\Aufgabe01\obj\Debug\netcoreapp2.0\Aufgabe01.csproj.CoreCompileInputs.cache
+C:\Users\Dennis\Documents\GitHub\SoftwareDesign-Dennis\Aufgabe01\obj\Debug\netcoreapp2.0\Aufgabe01.AssemblyInfoInputs.cache
+C:\Users\Dennis\Documents\GitHub\SoftwareDesign-Dennis\Aufgabe01\obj\Debug\netcoreapp2.0\Aufgabe01.AssemblyInfo.cs
+C:\Users\Dennis\Documents\GitHub\SoftwareDesign-Dennis\Aufgabe01\bin\Debug\netcoreapp2.0\Aufgabe01.deps.json
+C:\Users\Dennis\Documents\GitHub\SoftwareDesign-Dennis\Aufgabe01\bin\Debug\netcoreapp2.0\Aufgabe01.runtimeconfig.json
+C:\Users\Dennis\Documents\GitHub\SoftwareDesign-Dennis\Aufgabe01\bin\Debug\netcoreapp2.0\Aufgabe01.runtimeconfig.dev.json
+C:\Users\Dennis\Documents\GitHub\SoftwareDesign-Dennis\Aufgabe01\bin\Debug\netcoreapp2.0\Aufgabe01.dll
+C:\Users\Dennis\Documents\GitHub\SoftwareDesign-Dennis\Aufgabe01\bin\Debug\netcoreapp2.0\Aufgabe01.pdb
+C:\Users\Dennis\Documents\GitHub\SoftwareDesign-Dennis\Aufgabe01\obj\Debug\netcoreapp2.0\Aufgabe01.dll
+C:\Users\Dennis\Documents\GitHub\SoftwareDesign-Dennis\Aufgabe01\obj\Debug\netcoreapp2.0\Aufgabe01.pdb
