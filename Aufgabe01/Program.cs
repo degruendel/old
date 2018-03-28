@@ -24,7 +24,7 @@ namespace Aufgabe01
                     Console.WriteLine("Kugel:  A=" + A + "  |  V=" + V);
                     break;
 
-                case "o":
+                case "o":.
                     A = getOktaederSurface(d);
                     V = getOktaederVolume(d);
                     Console.WriteLine("Oktaeder:  A=" + A + "  |  V=" + V);
