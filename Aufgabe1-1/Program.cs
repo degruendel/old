@@ -44,7 +44,7 @@ namespace Aufgabe01
         }
         public static void getCubeInfo(double Kantenlänge)
         {
-            Console.WriteLine("Würfel:  A=" + getCubeSurface(Kantenlänge) + "  |  V=" + getCubeVolume(Kantenlänge));
+            Console.WriteLine("Würfel:  A=" + Math.Round(getCubeSurface(Kantenlänge), 2) + "  |  V=" + Math.Round(getCubeVolume(Kantenlänge), 2));
         }
 
         //Kugel Berechnung
@@ -62,7 +62,7 @@ namespace Aufgabe01
         }
         public static void getSphereInfo(double Durchmesser)
         {
-            Console.WriteLine("Kugel:  A=" + getSphereSurface(Durchmesser) + "  |  V=" + getSphereVolume(Durchmesser));
+            Console.WriteLine("Kugel:  A=" + Math.Round(getSphereSurface(Durchmesser), 2) + "  |  V=" + Math.Round(getSphereVolume(Durchmesser), 2));
         }
 
         //Okateder Berechnung
@@ -80,7 +80,7 @@ namespace Aufgabe01
         }
         public static void getOktaederInfo(double Durchmesser)
         {
-            Console.WriteLine("Oktaeder:  A=" + getOktaederSurface(Durchmesser) + "  |  V=" + getOktaederVolume(Durchmesser));
+            Console.WriteLine("Oktaeder:  A=" + Math.Round(getOktaederSurface(Durchmesser), 2) + "  |  V=" + Math.Round(getOktaederVolume(Durchmesser), 2));
         }
     }
 }
