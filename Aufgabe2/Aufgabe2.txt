@@ -1,0 +1,22 @@
+
+
+Person ist eine Klasse, die selbst aus Mom und Dad, welche vom Typ Person sind bestehen. 
+Daher ruft sie sich selbst wieder auf.
+
+Beim Breakpoint ist der Inhalt von root das jüngste Mitglied des Stammbaumes mit Vorname, Nachname und Geburtsdatum 
+und alle weiteren Verwandten mit ihren Vornamen, Nachnamen und Geburtsdaten.
+
+Zuerst wird der Stammbaum erstellt. Dieser wird dann in der Methode Find übergeben.
+In der Methode Find wird eine neue Person ret mit dem Wert null erstellt. Danach prüft die if-Bedingung, ob der Nachname 
+der ersten Person ungleich Battenberg ist. Da die erste Person Cambridge mit Nachnamen heißt und die Bedingen erfüllt ist, 
+wird die Person (Willie Cambridge) zurückgegeben.
+
+Wenn die Bedingung in == "Battenberg" geändert wird, bricht das Programm ab, da er nur mütterlicher Seits abfragt.
+Wenn Willi nicht Battenberg heißt, wird geprüft ob seine Mutter Battenberg heißt (Die Methode wird mit der Mutter von Willie erneut aufgerufen). 
+Da Diana auch nicht Battenberg heißt, geht es auch da weiter mit der Mutter. Bei Ruth Gill stürzt das Programm ab, 
+da Ruth keine Mutter mehr hat. Das Programm kann niemanden mit Battenberg finden, da es nicht den gesamten  
+Stammbaum abfragt, sondern nur die mütterliche Seite von Willie.
+
+Um einen anderen Namen ausgeben zu lassen, muss die Bedingung von ungleich zu istgleich geändert werden und der gesuchte Name in die Bedingung geschrieben werden.
+Dieser Name muss allerdings im Stammbaum auf der mütterlichen Seite vorkommen.
+

@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dennis\\Documents\\GitHub\\Softwaredesign\\Aufgabe2-1\\Aufgabe2-1.csproj",
-      "projectName": "Aufgabe2-1",
-      "projectPath": "C:\\Users\\Dennis\\Documents\\GitHub\\Softwaredesign\\Aufgabe2-1\\Aufgabe2-1.csproj",
+      "projectUniqueName": "C:\\Users\\Dennis\\Documents\\GitHub\\Softwaredesign\\Aufgabe2\\Debugging.csproj",
+      "projectName": "Debugging",
+      "projectPath": "C:\\Users\\Dennis\\Documents\\GitHub\\Softwaredesign\\Aufgabe2\\Debugging.csproj",
       "packagesPath": "C:\\Users\\Dennis\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dennis\\Documents\\GitHub\\Softwaredesign\\Aufgabe2-1\\obj\\",
+      "outputPath": "C:\\Users\\Dennis\\Documents\\GitHub\\Softwaredesign\\Aufgabe2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

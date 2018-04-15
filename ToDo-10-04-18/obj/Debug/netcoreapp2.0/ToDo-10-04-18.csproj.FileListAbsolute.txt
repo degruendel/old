@@ -1,0 +1,10 @@
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\ToDo-10-04-18\bin\Debug\netcoreapp2.0\ToDo-10-04-18.deps.json
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\ToDo-10-04-18\bin\Debug\netcoreapp2.0\ToDo-10-04-18.runtimeconfig.json
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\ToDo-10-04-18\bin\Debug\netcoreapp2.0\ToDo-10-04-18.runtimeconfig.dev.json
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\ToDo-10-04-18\bin\Debug\netcoreapp2.0\ToDo-10-04-18.dll
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\ToDo-10-04-18\bin\Debug\netcoreapp2.0\ToDo-10-04-18.pdb
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\ToDo-10-04-18\obj\Debug\netcoreapp2.0\ToDo-10-04-18.csproj.CoreCompileInputs.cache
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\ToDo-10-04-18\obj\Debug\netcoreapp2.0\ToDo-10-04-18.AssemblyInfoInputs.cache
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\ToDo-10-04-18\obj\Debug\netcoreapp2.0\ToDo-10-04-18.AssemblyInfo.cs
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\ToDo-10-04-18\obj\Debug\netcoreapp2.0\ToDo-10-04-18.dll
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\ToDo-10-04-18\obj\Debug\netcoreapp2.0\ToDo-10-04-18.pdb
