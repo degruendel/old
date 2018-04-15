@@ -3,20 +3,31 @@
 Person ist eine Klasse, die selbst aus Mom und Dad, welche vom Typ Person sind bestehen. 
 Daher ruft sie sich selbst wieder auf.
 
-Beim Breakpoint ist der Inhalt von root das jüngste Mitglied des Stammbaumes mit Vorname, Nachname und Geburtsdatum 
+Beim Breakpoint ist der Inhalt von root das jï¿½ngste Mitglied des Stammbaumes mit Vorname, Nachname und Geburtsdatum 
 und alle weiteren Verwandten mit ihren Vornamen, Nachnamen und Geburtsdaten.
 
-Zuerst wird der Stammbaum erstellt. Dieser wird dann in der Methode Find übergeben.
-In der Methode Find wird eine neue Person ret mit dem Wert null erstellt. Danach prüft die if-Bedingung, ob der Nachname 
-der ersten Person ungleich Battenberg ist. Da die erste Person Cambridge mit Nachnamen heißt und die Bedingen erfüllt ist, 
-wird die Person (Willie Cambridge) zurückgegeben.
+Zuerst wird der Stammbaum erstellt. Dieser wird dann in der Methode Find ï¿½bergeben.
+In der Methode Find wird eine neue Person ret mit dem Wert null erstellt. Danach prï¿½ft die if-Bedingung, ob der Nachname 
+der ersten Person ungleich Battenberg ist. Da die erste Person Cambridge mit Nachnamen heiï¿½t und die Bedingen erfï¿½llt ist, 
+wird die Person (Willie Cambridge) zurï¿½ckgegeben.
 
-Wenn die Bedingung in == "Battenberg" geändert wird, bricht das Programm ab, da er nur mütterlicher Seits abfragt.
-Wenn Willi nicht Battenberg heißt, wird geprüft ob seine Mutter Battenberg heißt (Die Methode wird mit der Mutter von Willie erneut aufgerufen). 
-Da Diana auch nicht Battenberg heißt, geht es auch da weiter mit der Mutter. Bei Ruth Gill stürzt das Programm ab, 
+Wenn die Bedingung in == "Battenberg" geï¿½ndert wird, bricht das Programm ab, da er nur mï¿½tterlicher Seits abfragt.
+Wenn Willi nicht Battenberg heiï¿½t, wird geprï¿½ft ob seine Mutter Battenberg heiï¿½t (Die Methode wird mit der Mutter von Willie erneut aufgerufen). 
+Da Diana auch nicht Battenberg heiï¿½t, geht es auch da weiter mit der Mutter. Bei Ruth Gill stï¿½rzt das Programm ab, 
 da Ruth keine Mutter mehr hat. Das Programm kann niemanden mit Battenberg finden, da es nicht den gesamten  
-Stammbaum abfragt, sondern nur die mütterliche Seite von Willie.
+Stammbaum abfragt, sondern nur die mï¿½tterliche Seite von Willie.
 
-Um einen anderen Namen ausgeben zu lassen, muss die Bedingung von ungleich zu istgleich geändert werden und der gesuchte Name in die Bedingung geschrieben werden.
-Dieser Name muss allerdings im Stammbaum auf der mütterlichen Seite vorkommen.
+Um einen anderen Namen ausgeben zu lassen, muss die Bedingung von ungleich zu istgleich geï¿½ndert werden und der gesuchte Name in die Bedingung geschrieben werden.
+Dieser Name muss allerdings im Stammbaum auf der mï¿½tterlichen Seite vorkommen.
 
+Wenn man das Programm durch 
+```if(person.Mom != null)
+  ret = Find(person.Mom);
+if(person.Dad != null)
+  ret = Find(person.Dad);
+ return ret;``` 
+ ergÃ¤nzt, wird der gesammte Stammbaum abgefragt.
+
+ Um eine Person durch ihr Alter zu finden, wird das aktuelle Jahr mit dem Geburtsjahr der Person subtrahiert um das Alter der Person zu bekommen.
+ Danach kann festgelegt werden, in welcher Spanne dieses Alter sein soll (siehe Familytree.cs). Ich habe die Spanne auf "zwischen 135 und 137" gelegt. 
+ Dadurch kommt Andi ElGreco heraus, da dieser genau 136 Jahre alt ist.
