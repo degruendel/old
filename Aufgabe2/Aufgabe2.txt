@@ -1,4 +1,4 @@
-
+Protokoll zu Aufgabe 2
 
 Person ist eine Klasse, die selbst aus Mom und Dad, welche vom Typ Person sind bestehen. 
 Daher ruft sie sich selbst wieder auf.
