@@ -12,12 +12,14 @@ der ersten Person ungleich Battenberg ist. Da die erste Person Cambridge mit Nac
 wird die Person (Willie Cambridge) zur�ckgegeben.
 
 Wenn die Bedingung in == "Battenberg" ge�ndert wird, bricht das Programm ab, da er nur m�tterlicher Seits abfragt.
-Wenn Willi nicht Battenberg hei�t, wird gepr�ft ob seine Mutter Battenberg hei�t (Die Methode wird mit der Mutter von Willie erneut aufgerufen). 
+Wenn Willi nicht Battenberg hei�t, wird gepr�ft ob seine Mutter Battenberg hei�t (Die Methode wird mit der Mutter von Willie 
+erneut aufgerufen). 
 Da Diana auch nicht Battenberg hei�t, geht es auch da weiter mit der Mutter. Bei Ruth Gill st�rzt das Programm ab, 
 da Ruth keine Mutter mehr hat. Das Programm kann niemanden mit Battenberg finden, da es nicht den gesamten  
 Stammbaum abfragt, sondern nur die m�tterliche Seite von Willie.
 
-Um einen anderen Namen ausgeben zu lassen, muss die Bedingung von ungleich zu istgleich ge�ndert werden und der gesuchte Name in die Bedingung geschrieben werden.
+Um einen anderen Namen ausgeben zu lassen, muss die Bedingung von ungleich zu istgleich ge�ndert werden und der gesuchte Name 
+in die Bedingung geschrieben werden.
 Dieser Name muss allerdings im Stammbaum auf der m�tterlichen Seite vorkommen.
 
 Wenn man das Programm durch 
@@ -28,6 +30,8 @@ if(person.Dad != null)
  return ret;``` 
  ergänzt, wird der gesammte Stammbaum abgefragt.
 
- Um eine Person durch ihr Alter zu finden, wird das aktuelle Jahr mit dem Geburtsjahr der Person subtrahiert um das Alter der Person zu bekommen.
- Danach kann festgelegt werden, in welcher Spanne dieses Alter sein soll (siehe Familytree.cs). Ich habe die Spanne auf "zwischen 135 und 137" gelegt. 
+ Um eine Person durch ihr Alter zu finden, wird das aktuelle Jahr mit dem Geburtsjahr der Person subtrahiert um das Alter 
+ der Person zu bekommen.
+ Danach kann festgelegt werden, in welcher Spanne dieses Alter sein soll (siehe Familytree.cs). 
+ Ich habe die Spanne auf "zwischen 135 und 137" gelegt. 
  Dadurch kommt Andi ElGreco heraus, da dieser genau 136 Jahre alt ist.
