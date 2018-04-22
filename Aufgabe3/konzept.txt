@@ -1,0 +1,13 @@
+23 = 2x6+3 = 15
+24 = 2x6+4 = 16
+25 = 2x6+5 = 17
+30 = 3x6+0 = 18
+
+Wir geben 15 ein
+Programm rechnet 15:6  = 2
+dann 2x6=12 und 15-12=3
+dann 2 und 3 = 23
+
+Wir geben 23 ein
+Programm rechnet 2x6 = 12
+dann 12+3
