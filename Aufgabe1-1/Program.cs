@@ -7,80 +7,74 @@ namespace Aufgabe01
         static void Main(string[] args)
         {
             var Num = args[1];
-            double d = Convert.ToDouble(Num);
+            double inputNumber = Convert.ToDouble(Num);
             switch (args[0])
             {
                 case "c":
-                    getCubeInfo(d);
+                    getCubeInfo(inputNumber);
                     break;
 
                 case "k":
-                    getSphereInfo(d);
+                    getSphereInfo(inputNumber);
                     break;
 
                 case "o":
-                    getOktaederInfo(d);
+                    getOktaederInfo(inputNumber);
                     break;
 
                 default:
-                    Console.WriteLine("Bitte wähle c, k, o");
+                    Console.WriteLine("please choose c, k, o");
                     break;
             }
         }
 
 
-        //Würfel Berechnung
-        public static double getCubeSurface(double Kantenlänge)
+        //cube
+        public static double getCubeSurface(double input)
         {
-            double d = Kantenlänge;
-            double A = 6 * (d * d);
-            return A;
+            double cubesurface = 6 * (input * input);
+            return cubesurface;
         }
-        public static double getCubeVolume(double Kantenlänge)
+        public static double getCubeVolume(double input)
         {
-            double d = Kantenlänge;
-            double V = d * d * d;
-            return V;
+            double cubevolume = input * input * input;
+            return cubevolume;
         }
-        public static void getCubeInfo(double Kantenlänge)
+        public static void getCubeInfo(double input)
         {
-            Console.WriteLine("Würfel:  A=" + Math.Round(getCubeSurface(Kantenlänge), 2) + "  |  V=" + Math.Round(getCubeVolume(Kantenlänge), 2));
+            Console.WriteLine("Würfel:  A=" + Math.Round(getCubeSurface(input), 2) + "  |  V=" + Math.Round(getCubeVolume(input), 2));
         }
 
-        //Kugel Berechnung
-        public static double getSphereSurface(double Durchmesser)
+        //sphere
+        public static double getSphereSurface(double input)
         {
-            double d = Durchmesser;
-            double A = Math.PI * (d * d);
-            return A;
+            double spheresurface = Math.PI * (input * input);
+            return spheresurface;
         }
-        public static double getSphereVolume(double Durchmesser)
+        public static double getSphereVolume(double input)
         {
-            double d = Durchmesser;
-            double V = (Math.PI * (d * d * d)) / 6;
-            return V;
+            double spherevolume = (Math.PI * (input * input * input)) / 6;
+            return spherevolume;
         }
-        public static void getSphereInfo(double Durchmesser)
+        public static void getSphereInfo(double input)
         {
-            Console.WriteLine("Kugel:  A=" + Math.Round(getSphereSurface(Durchmesser), 2) + "  |  V=" + Math.Round(getSphereVolume(Durchmesser), 2));
+            Console.WriteLine("Kugel:  A=" + Math.Round(getSphereSurface(input), 2) + "  |  V=" + Math.Round(getSphereVolume(input), 2));
         }
 
-        //Okateder Berechnung
-        public static double getOktaederSurface(double Durchmesser)
+        //octaeder
+        public static double getOktaederSurface(double input)
         {
-            double d = Durchmesser;
-            double A = 2 * Math.Sqrt(3) * (d * d);
-            return A;
+            double octaedersurface = 2 * Math.Sqrt(3) * (input * input);
+            return octaedersurface;
         }
-        public static double getOktaederVolume(double Durchmesser)
+        public static double getOktaederVolume(double input)
         {
-            double d = Durchmesser;
-            double V = Math.Sqrt(2) * (d * d * d) / 3;
-            return V;
+            double octaedervolume = Math.Sqrt(2) * (input * input * input) / 3;
+            return octaedervolume;
         }
-        public static void getOktaederInfo(double Durchmesser)
+        public static void getOktaederInfo(double input)
         {
-            Console.WriteLine("Oktaeder:  A=" + Math.Round(getOktaederSurface(Durchmesser), 2) + "  |  V=" + Math.Round(getOktaederVolume(Durchmesser), 2));
+            Console.WriteLine("Oktaeder:  A=" + Math.Round(getOktaederSurface(input), 2) + "  |  V=" + Math.Round(getOktaederVolume(input), 2));
         }
     }
 }
