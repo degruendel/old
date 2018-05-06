@@ -39,10 +39,7 @@ namespace Aufgabe4_1
 
         public List<TreeNode<T>> FindChild(T search, List<TreeNode<T>> Nodes = null)
         {
-            if (Nodes == null)
-            {
-                Nodes = new List<TreeNode<T>>();
-            }
+            
             if (Data.Equals(search))
             {
                 Nodes.Add(this);
