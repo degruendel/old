@@ -1,0 +1,11 @@
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\Aufgabe 8\bin\Debug\netcoreapp2.0\Aufgabe 8.deps.json
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\Aufgabe 8\bin\Debug\netcoreapp2.0\Aufgabe 8.runtimeconfig.json
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\Aufgabe 8\bin\Debug\netcoreapp2.0\Aufgabe 8.runtimeconfig.dev.json
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\Aufgabe 8\bin\Debug\netcoreapp2.0\Aufgabe 8.dll
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\Aufgabe 8\bin\Debug\netcoreapp2.0\Aufgabe 8.pdb
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\Aufgabe 8\obj\Debug\netcoreapp2.0\Aufgabe 8.csprojResolveAssemblyReference.cache
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\Aufgabe 8\obj\Debug\netcoreapp2.0\Aufgabe 8.csproj.CoreCompileInputs.cache
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\Aufgabe 8\obj\Debug\netcoreapp2.0\Aufgabe 8.AssemblyInfoInputs.cache
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\Aufgabe 8\obj\Debug\netcoreapp2.0\Aufgabe 8.AssemblyInfo.cs
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\Aufgabe 8\obj\Debug\netcoreapp2.0\Aufgabe 8.dll
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\Aufgabe 8\obj\Debug\netcoreapp2.0\Aufgabe 8.pdb
