@@ -55,12 +55,14 @@ namespace Aufgabe_8
                 if (FullField())
                 {
                     Console.WriteLine("It's a draw.");
+                    PrintField();
                     break;
                 }
 
                 if (Win())
                 {
                     Console.WriteLine("Player " + player + " won.");
+                    PrintField();
                     break;
                 }
             }
