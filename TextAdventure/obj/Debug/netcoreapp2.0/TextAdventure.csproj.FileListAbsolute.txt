@@ -1,0 +1,11 @@
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\TextAdventure\obj\Debug\netcoreapp2.0\TextAdventure.csprojResolveAssemblyReference.cache
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\TextAdventure\obj\Debug\netcoreapp2.0\TextAdventure.csproj.CoreCompileInputs.cache
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\TextAdventure\obj\Debug\netcoreapp2.0\TextAdventure.AssemblyInfoInputs.cache
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\TextAdventure\obj\Debug\netcoreapp2.0\TextAdventure.AssemblyInfo.cs
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\TextAdventure\bin\Debug\netcoreapp2.0\TextAdventure.deps.json
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\TextAdventure\bin\Debug\netcoreapp2.0\TextAdventure.runtimeconfig.json
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\TextAdventure\bin\Debug\netcoreapp2.0\TextAdventure.runtimeconfig.dev.json
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\TextAdventure\bin\Debug\netcoreapp2.0\TextAdventure.dll
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\TextAdventure\bin\Debug\netcoreapp2.0\TextAdventure.pdb
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\TextAdventure\obj\Debug\netcoreapp2.0\TextAdventure.dll
+C:\Users\Dennis\Documents\GitHub\Softwaredesign\TextAdventure\obj\Debug\netcoreapp2.0\TextAdventure.pdb
