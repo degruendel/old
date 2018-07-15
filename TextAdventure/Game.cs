@@ -6,63 +6,77 @@ using System.Threading.Tasks;
 
 namespace TextAdventure
 {
-    class Game
+    public class Game
     {
         Location currentLocation;
-
         public bool isRunning = true;
         private bool _gameOver = false;
-
         private List<Item> inventory;
-        private Npc currentNpc;
-        private Npc currentEnemy;
-        private List<Npc> allNpcs;
+        //private Npc currentNpc;
+        //private Npc currentEnemy;
+        //private List<Npc> allNpcs;
+        //private List<Location> allRooms;
+        private int turnCounter;
+        //private Player player;
 
         public Game()
         {
             inventory = new List<Item>();
-            allNpcs = new List<Npc>();
+            //allNpcs = new List<Npc>();
+            turnCounter = 0;
 
-            Console.WriteLine("Welcome adventurer, prepare yourself for a fantastical journey into the unknown.");
-            Console.WriteLine("Press 'h' or type 'help' for help.");
+            Console.WriteLine();
+            Console.WriteLine("Welcome pirate on this adventure!");
+            Console.WriteLine("Type 'help(h)' for the controls.");
 
             //Rooms
 
             //Storage
-            Location storage = new Location("Storage", "You stand at the entrance of a long hallway. The hallways gets darker\nand darker, and you cannot see what lies beyond. To the east\nis an old oaken door, unlocked and beckoning.");
-            Item rock = new Item("rock", true, "A rather jagged rock, slightly smaller than a fist.");
-            storage.addItem(rock);
-            Npc butler = new Npc("Alfred Sharp", "Grey hair, a small mustache and a perfectly aligned suit dressed that man. He looked exactly like you would imagine a butler to look like.", true, "Well Mr. Grifford, despite this terrible happenings today, i have much work to do. Because of the absence of Lord Charlie Battenberg till tomorrow. And before you ask, i have been in the service Room this whole day, assisting Lady Battenberg. The only strange thing, exept the 'incident', is that my precious cleaning mop is missing since this morning.", 100, storage);
+            Location storage = new Location("Storage", "This dark room is the storage of the ship. Watch out the ceiling is very low!");
+            Item barrel = new Item("barrel", false, "This barrel contains gunpowder. But it looks like this is way to heavy for me.");
+            storage.addItem(barrel);
+            //Npc parrot = new Npc("Parrot", "Cute little feathered friend. Maybe he can talk?", true, "Korax, korax. Arrrr.", 100, storage);
+            //storage.AddNpc(parrot);
 
             //Corridor
-            Location corridor = new Location("Corridor", "You have reached the end of a long dark hallway. You can\nsee nowhere to go but back.");
-            Item window = new Item("window", false, "A single sheet of glass. It seems sealed up.");
-            corridor.addItem(window);
+            Location corridor = new Location("Corridor", "This is the corridor underneath the deck. From here you can go to the storage ('north(n)') or to the cannonrooms ('west(w)' or 'east(e)').");
+            Item bucket = new Item("bucket", true, "It't very difficult to find a reliable cleaning pirat. Isn't that a job for you?");
+            corridor.addItem(bucket);
 
             //Cannonleft
-            Location cannon_left = new Location("Cannonroom left side", "You stand at the entrance of a long hallway. The hallways gets darker\nand darker, and you cannot see what lies beyond. To the east\nis an old oaken door, unlocked and beckoning.");
-            //Item rock = new Item("rock", true, "A rather jagged rock, slightly smaller than a fist.");
-            cannon_left.addItem(rock);
+            Location cannon_left = new Location("Cannonroom left side", "Wow look at these big cannons. A little bit gunpowder here and a cannonball there and we should have a nice little firework.");
+            Item cannon1 = new Item("cannon 1", false, "Very impressive.");
+            Item cannon2 = new Item("cannon 2", false, "Does this cannon look different from the others?");
+            Item cannon3 = new Item("cannon 3", false, "I really want to try out this one.");
+            cannon_left.addItem(cannon1);
+            cannon_left.addItem(cannon2);
+            cannon_left.addItem(cannon3);
 
             //Cannonright
-            Location cannon_right = new Location("Cannonroom right side", "You stand at the entrance of a long hallway. The hallways gets darker\nand darker, and you cannot see what lies beyond. To the east\nis an old oaken door, unlocked and beckoning.");
-            //Item rock = new Item("rock", true, "A rather jagged rock, slightly smaller than a fist.");
-            cannon_right.addItem(rock);
+            Location cannon_right = new Location("Cannonroom right side", "Did you ever saw such big cannons? I did't.");
+            Item cannon4 = new Item("cannon 4", false, "Booom... Just kidding.");
+            Item cannon5 = new Item("cannon 5", false, "I wonder what this lever does.");
+            Item cannon6 = new Item("cannon 6", false, "This looks broken.");
+            cannon_right.addItem(cannon4);
+            cannon_right.addItem(cannon5);
+            cannon_right.addItem(cannon6);
 
             //Deck
-            Location deck = new Location("Deck", "You stand at the entrance of a long hallway. The hallways gets darker\nand darker, and you cannot see what lies beyond. To the east\nis an old oaken door, unlocked and beckoning.");
-            //Item rock = new Item("rock", true, "A rather jagged rock, slightly smaller than a fist.");
-            deck.addItem(rock);
+            Location deck = new Location("Deck", "From here you can smell the salted water and watch the sunset. Romantic huh?");
+            Item telescope = new Item("telescope", true, "Maybe someone lost it. There is an island, right there!");
+            deck.addItem(telescope);
 
             //Control
-            Location control = new Location("Steering", "You stand at the entrance of a long hallway. The hallways gets darker\nand darker, and you cannot see what lies beyond. To the east\nis an old oaken door, unlocked and beckoning.");
-            //Item rock = new Item("rock", true, "A rather jagged rock, slightly smaller than a fist.");
-            control.addItem(rock);
+            Location control = new Location("Steering", "From here the steeringman can maneuver the ship. By the way where is he? Oh watch out we are swimming into a rock soon!");
+            Item map = new Item("map", true, "This map shows us all the hidden treasures around here. Maybe we should find an island.");
+            Item pistol = new Item("pistol", true, "A gun? Yeah. But where is the ammunition?");
+            control.addItem(map);
+            control.addItem(pistol);
 
             //Captainsroom
-            Location captainsroom = new Location("Captainsrooms", "You stand at the entrance of a long hallway. The hallways gets darker\nand darker, and you cannot see what lies beyond. To the east\nis an old oaken door, unlocked and beckoning.");
-            //Item rock = new Item("rock", true, "A rather jagged rock, slightly smaller than a fist.");
-            captainsroom.addItem(rock);
+            Location captainsroom = new Location("Captainsrooms", "Wow really luxurious. One day I will become captain.");
+            Item ammunition = new Item("ammunition", true, "I know for what this is...");
+            captainsroom.addItem(ammunition);
 
             //Exits
 
@@ -94,12 +108,14 @@ namespace TextAdventure
             //Cannonright
             cannon_right.addExit(new Exit(Exit.Directions.West, corridor));
 
-            allNpcs.Add(butler);
+            //NPCs
+            //allNpcs.Add(parrot);
 
             currentLocation = deck;
             showLocation();
         }
 
+        //showLocation
         public void showLocation()
         {
             Console.WriteLine("\n" + currentLocation.getTitle() + "\n");
@@ -114,15 +130,15 @@ namespace TextAdventure
                     Console.WriteLine(currentLocation.getInventory()[i].Name);
                 }
             }
-            if(currentLocation.GetNpcs().Count > 0)
+            /* if (currentLocation.GetNpcs().Count > 0)
+            {
+                Console.WriteLine("\nAnd i remember:");
+                for (int i = 0; i < currentLocation.GetNpcs().Count; i++)
                 {
-                    Console.WriteLine("\nAnd i remember:");
-                    for(int i = 0; i < currentLocation.GetNpcs().Count; i++)
-                    {
-                        Console.WriteLine(currentLocation.GetNpcs()[i].GetName());
-                    }
-                    Console.Write("being in the " + currentLocation.getTitle() + "\n");
+                    Console.WriteLine(currentLocation.GetNpcs()[i].GetName());
                 }
+                Console.Write("being in the " + currentLocation.getTitle() + "\n");
+            } */
 
             Console.WriteLine("\nAvailable Exits: \n");
 
@@ -134,25 +150,24 @@ namespace TextAdventure
             Console.WriteLine();
         }
 
-        // TODO: Implement the input handling algorithm.
+        //Commands
         public void doAction(string command)
         {
-            //Help command is NEW
+            //Help
             if (command == "help" || command == "h")
             {
-                Console.WriteLine("Welcome to this Text Adventure!");
                 Console.WriteLine("'look(l)':               Shows you the room, its exits, and any items it contains.");
                 Console.WriteLine("'take(t) [itemname]':    Attempts to pick up an item.");
                 Console.WriteLine("'inventory(i)':          Allows you to see the items in your inventory.");
-                Console.WriteLine(" 'drop(d) [itemname]:    Lets you drop a specific item from your inventory.");
+                Console.WriteLine("'drop(d) [itemname]':    Lets you drop a specific item from your inventory.");
+                Console.WriteLine("'look at [itemname]':    Lets you go closer to an item.");
                 Console.WriteLine("'quit(q)':               Quits the game.");
                 Console.WriteLine();
                 Console.WriteLine("Directions can be input as either the full word, or the abbriviation, \ne.g. 'north or n'");
                 return;
             }
 
-            //If statement to access the player inventory
-            //This can't be changed a great deal
+            //Inventory
             if ((command == "inventory") || (command == "i"))
             {
                 showInventory();
@@ -160,19 +175,18 @@ namespace TextAdventure
                 return;
             }
 
-            //If statement for player to pick up objects
-            //This works fine. Change how the function works later though.
+            //Take
             if (command.Length >= 4 && command.Substring(0, 4) == "take")
             {
                 if (command == "take")
                 {
-                    Console.WriteLine("\nPlease specify what you would like to pick up.\n");
+                    Console.WriteLine("\nWhat would you like to pick up?\n");
                     return;
                 }
                 if (currentLocation.getInventory().Exists(x => x.Name == command.Substring(5)) && currentLocation.getInventory().Exists(x => x.Useable == true))
                 {
                     inventory.Add(currentLocation.takeItem(command.Substring(5)));
-                    Console.WriteLine("\nYou pick up the " + command.Substring(5) + ".\n");
+                    Console.WriteLine("\nYou picked up the " + command.Substring(5) + ".\n");
                     return;
                 }
                 if (currentLocation.getInventory().Exists(x => x.Name == command.Substring(5)) && currentLocation.getInventory().Exists(x => x.Useable == false))
@@ -182,22 +196,23 @@ namespace TextAdventure
                 }
                 else
                 {
-                    Console.WriteLine("\n" + "This item does not exist.\n");
+                    Console.WriteLine("\n" + "Can't find this item here.\n");
                     return;
                 }
             }
 
+            //Take(t)
             if (command.Length >= 1 && command.Substring(0, 1) == "t")
             {
                 if (command == "t")
                 {
-                    Console.WriteLine("\nPlease specify what you would like to pick up.\n");
+                    Console.WriteLine("\nWhat would you like to pick up?\n");
                     return;
                 }
                 if (currentLocation.getInventory().Exists(x => x.Name == command.Substring(2)) && currentLocation.getInventory().Exists(x => x.Useable == true))
                 {
                     inventory.Add(currentLocation.takeItem(command.Substring(2)));
-                    Console.WriteLine("\nYou pick up the " + command.Substring(2) + ".\n");
+                    Console.WriteLine("\nYou picked up the " + command.Substring(2) + ".\n");
                     return;
                 }
                 if (currentLocation.getInventory().Exists(x => x.Name == command.Substring(2)) && currentLocation.getInventory().Exists(x => x.Useable == false))
@@ -207,26 +222,28 @@ namespace TextAdventure
                 }
                 else
                 {
-                    Console.WriteLine("\n" + "This item does not exist.\n");
+                    Console.WriteLine("\n" + "Can't find this item here.\n");
                     return;
                 }
             }
 
+            //Look
             if (command == "look" || command == "l")
             {
                 showLocation();
                 if (currentLocation.getInventory().Count == 0)
                 {
-                    Console.WriteLine("There are no items of interest in the room.\n");
+                    Console.WriteLine("It's too dark to see any items.\n");
                 }
                 return;
             }
 
+            //Drop
             if ((command.Length >= 4 && command.Substring(0, 4) == "drop"))
             {
                 if (command == "drop")
                 {
-                    Console.WriteLine("\nPlease specify what you would like to drop.\n");
+                    Console.WriteLine("\nWhat would you like to drop?\n");
                     return;
                 }
                 if (inventory.Exists(x => x.Name == command.Substring(5)))
@@ -234,7 +251,7 @@ namespace TextAdventure
 
                     currentLocation.addItem(inventory.Find(x => x.Name == command.Substring(5)));
                     inventory.Remove(currentLocation.getInventory().Find(x => x.Name == command.Substring(5)));
-                    Console.WriteLine("\nI dropped the " + command.Substring(5) + ".\n");
+                    Console.WriteLine("\nYou dropped the " + command.Substring(5) + ".\n");
                     return;
                 }
                 else
@@ -244,11 +261,12 @@ namespace TextAdventure
                 }
             }
 
+            //Drop(d)
             if ((command.Length >= 1 && command.Substring(0, 1) == "d"))
             {
                 if (command == "d")
                 {
-                    Console.WriteLine("\nPlease specify what you would like to drop.\n");
+                    Console.WriteLine("\nWhat would you like to drop?\n");
                     return;
                 }
                 if (inventory.Exists(x => x.Name == command.Substring(2)))
@@ -256,7 +274,7 @@ namespace TextAdventure
 
                     currentLocation.addItem(inventory.Find(x => x.Name == command.Substring(2)));
                     inventory.Remove(currentLocation.getInventory().Find(x => x.Name == command.Substring(2)));
-                    Console.WriteLine("\nI dropped the " + command.Substring(2) + ".\n");
+                    Console.WriteLine("\nYou dropped the " + command.Substring(2) + ".\n");
                     return;
                 }
                 else
@@ -266,14 +284,34 @@ namespace TextAdventure
                 }
             }
 
+            //Look at
+            if (command.Length >= 7 && command.Substring(0, 7) == "look at")
+            {
+                if (command == "look at")
+                {
+                    Console.WriteLine("\nPlease specify what you wish to look at.\n");
+                    return;
+                }
+                if (currentLocation.getInventory().Exists(x => x.Name == command.Substring(8)) || inventory.Exists(x => x.Name == command.ToLower().Substring(8)))
+                {
+                    Console.WriteLine("\n" + currentLocation.getInventory().Find(x => x.Name.Contains(command.Substring(8))).Description + "\n");
+                    return;
+                }
+                else
+                {
+                    Console.WriteLine("\nThat item does not exist in this location or your inventory.\n");
+                    return;
+                }
+            }
 
-
+            //moving
             if (moveRoom(command))
                 return;
 
-            Console.WriteLine("\nInvalid command, are you confused?\n");
+            Console.WriteLine("\nThis can't be done. Try 'help(h)' instead.\n");
         }
 
+        //moving
         private bool moveRoom(string command)
         {
             foreach (Exit exit in currentLocation.getExits())
@@ -290,7 +328,28 @@ namespace TextAdventure
         }
 
 
+        //NPC
+        /* public void MoveNpc(string npc, string room)
+        {
+            Npc _currentNpc = allNpcs.Find(x => x.GetName().Equals(npc));
+            Location npcCurrentRoom = allRooms.Find(y => y.Equals(allNpcs.Find(x => x.GetName().Equals(npc)).GetCurrentRoom()));
+            Location npcNewRoom = allRooms.Find(x => x.getTitle().Equals(room));
+            npcCurrentRoom.RemoveNpc(_currentNpc);
+            npcNewRoom.AddNpc(_currentNpc);
+            _currentNpc.ChangeCurrentRoom(npcNewRoom);
+            return;
+        } */
 
+        /* public void Events(string command)
+        {
+            if (turnCounter > 3)
+            {
+                MoveNpc("Alfred Sharp", "Deck");
+            }
+            return;
+        } */
+
+        //show the inventory
         private void showInventory()
         {
             if (inventory.Count > 0)
@@ -308,26 +367,26 @@ namespace TextAdventure
             }
         }
 
+        //update game
         public void Update()
         {
             string currentCommand = Console.ReadLine().ToLower();
 
-            // instantly check for a quit
+            //quit game
             if (currentCommand == "quit" || currentCommand == "q")
             {
                 isRunning = false;
                 return;
             }
 
-
             if (!_gameOver)
             {
-                // otherwise, process commands.
                 doAction(currentCommand);
+                turnCounter = turnCounter + 1;
             }
             else
             {
-                Console.WriteLine("\nNope. Time to quit.\n");
+                Console.WriteLine("\nGame over.\n");
             }
         }
     }

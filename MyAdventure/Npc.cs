@@ -1,7 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 
-namespace TextAdventure
+namespace Text_Adventure
 {
     public class Npc
     {
@@ -10,10 +10,10 @@ namespace TextAdventure
         private string description;
         private string answer;
         private int health;
-        private Location currentRoom;
+        private Room currentRoom;
         private List<Item> inventory;
 
-        public Npc(string _name, string _description, bool _fightable, string _answer, int _health, Location _currentRoom)
+        public Npc(string _name, string _description, bool _fightable, string _answer, int _health, Room _currentRoom)
         {
             name = _name;
             fightable = _fightable;
@@ -23,14 +23,14 @@ namespace TextAdventure
             currentRoom = _currentRoom;
             inventory = new List<Item>();
         }
-
-        public void ChangeCurrentRoom(Location room)
+    
+        public void ChangeCurrentRoom(Room room)
         {
             currentRoom = room;
             return;
         }
 
-        public Location GetCurrentRoom()
+        public Room GetCurrentRoom()
         {
             return currentRoom;
         }

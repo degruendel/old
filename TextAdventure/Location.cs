@@ -22,6 +22,7 @@ namespace TextAdventure
             roomDescription = description;
             exits = new List<Exit>();
             inventory = new List<Item>();
+            npcs = new List<Npc>();
         }
 
         public override string ToString()
@@ -92,7 +93,7 @@ namespace TextAdventure
 
         public void RemoveNpc(Npc npc)
         {
-            if(npcs.Contains(npc))
+            if (npcs.Contains(npc))
             {
                 npcs.Remove(npc);
             }

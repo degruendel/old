@@ -1,21 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TextAdventure
+namespace Text_Adventure
 {
     public class Program
     {
-
         static void Main(string[] args)
         {
+            MainGame game = new MainGame();
 
-            Game _Game = new Game();
-
-            while (_Game.isRunning)
+            while(game.running)
             {
-                _Game.Update();
+                game.Update();
             }
-
         }
+
     }
 }
