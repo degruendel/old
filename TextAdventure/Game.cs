@@ -9,7 +9,6 @@ namespace TextAdventure
     public class Game
     {
         Location currentLocation;
-        public bool isRunning = true;
         private bool _gameOver = false;
         private List<Item> inventory;
         //private Npc currentNpc;
