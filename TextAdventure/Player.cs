@@ -7,6 +7,8 @@ namespace TextAdventure
     {
         private int health;
         private List<Item> inventory;
+        Random r = new Random();
+        int damage;
 
         public Player(int _health)
         {
@@ -21,7 +23,8 @@ namespace TextAdventure
 
         public int ReduceHealth()
         {
-            health = health - 10;
+            damage = r.Next(10,90);
+            health = health - damage;
             return health;
         }
 

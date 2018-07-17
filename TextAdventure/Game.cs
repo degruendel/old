@@ -9,20 +9,22 @@ namespace TextAdventure
     public class Game
     {
         Location currentLocation;
+        public bool isRunning = true;
         private bool _gameOver = false;
         private List<Item> inventory;
-        //private Npc currentNpc;
-        //private Npc currentEnemy;
-        //private List<Npc> allNpcs;
-        //private List<Location> allRooms;
+        private Npc currentNpc;
+        private Npc currentEnemy;
+        private List<Npc> allNpcs;
+        private List<Location> allLocations;
         private int turnCounter;
-        //private Player player;
+        private Player player;
 
         public Game()
         {
             inventory = new List<Item>();
-            //allNpcs = new List<Npc>();
+            allNpcs = new List<Npc>();
             turnCounter = 0;
+            Player player = new Player(100);
 
             Console.WriteLine();
             Console.WriteLine("Welcome pirate on this adventure!");
@@ -34,8 +36,8 @@ namespace TextAdventure
             Location storage = new Location("Storage", "This dark room is the storage of the ship. Watch out the ceiling is very low!");
             Item barrel = new Item("barrel", false, "This barrel contains gunpowder. But it looks like this is way to heavy for me.");
             storage.addItem(barrel);
-            //Npc parrot = new Npc("Parrot", "Cute little feathered friend. Maybe he can talk?", true, "Korax, korax. Arrrr.", 100, storage);
-            //storage.AddNpc(parrot);
+            Npc parrot = new Npc("Parrot", "Cute little feathered friend. Maybe he can talk?", true, "Korax, korax. Arrrr.", 100, storage);
+            storage.AddNpc(parrot);
 
             //Corridor
             Location corridor = new Location("Corridor", "This is the corridor underneath the deck. From here you can go to the storage ('north(n)') or to the cannonrooms ('west(w)' or 'east(e)').");
@@ -108,14 +110,14 @@ namespace TextAdventure
             cannon_right.addExit(new Exit(Exit.Directions.West, corridor));
 
             //NPCs
-            //allNpcs.Add(parrot);
+            allNpcs.Add(parrot);
 
             currentLocation = deck;
-            showLocation();
+            ShowLocation();
         }
 
         //showLocation
-        public void showLocation()
+        public void ShowLocation()
         {
             Console.WriteLine("\n" + currentLocation.getTitle() + "\n");
             Console.WriteLine(currentLocation.getDescription());
@@ -129,15 +131,14 @@ namespace TextAdventure
                     Console.WriteLine(currentLocation.getInventory()[i].Name);
                 }
             }
-            /* if (currentLocation.GetNpcs().Count > 0)
+            if (currentLocation.GetNpcs().Count > 0)
             {
-                Console.WriteLine("\nAnd i remember:");
+                Console.WriteLine("\nAnd there is:");
                 for (int i = 0; i < currentLocation.GetNpcs().Count; i++)
                 {
                     Console.WriteLine(currentLocation.GetNpcs()[i].GetName());
                 }
-                Console.Write("being in the " + currentLocation.getTitle() + "\n");
-            } */
+            }
 
             Console.WriteLine("\nAvailable Exits: \n");
 
@@ -150,7 +151,7 @@ namespace TextAdventure
         }
 
         //Commands
-        public void doAction(string command)
+        public void Action(string command)
         {
             //Help
             if (command == "help" || command == "h")
@@ -160,6 +161,7 @@ namespace TextAdventure
                 Console.WriteLine("'inventory(i)':          Allows you to see the items in your inventory.");
                 Console.WriteLine("'drop(d) [itemname]':    Lets you drop a specific item from your inventory.");
                 Console.WriteLine("'look at [itemname]':    Lets you go closer to an item.");
+                Console.WriteLine("'speak(sp) [name]':      Talk to a character.");
                 Console.WriteLine("'quit(q)':               Quits the game.");
                 Console.WriteLine();
                 Console.WriteLine("Directions can be input as either the full word, or the abbriviation, \ne.g. 'north or n'");
@@ -169,7 +171,7 @@ namespace TextAdventure
             //Inventory
             if ((command == "inventory") || (command == "i"))
             {
-                showInventory();
+                ShowInventory();
                 Console.WriteLine();
                 return;
             }
@@ -229,7 +231,7 @@ namespace TextAdventure
             //Look
             if (command == "look" || command == "l")
             {
-                showLocation();
+                ShowLocation();
                 if (currentLocation.getInventory().Count == 0)
                 {
                     Console.WriteLine("It's too dark to see any items.\n");
@@ -296,6 +298,11 @@ namespace TextAdventure
                     Console.WriteLine("\n" + currentLocation.getInventory().Find(x => x.Name.Contains(command.Substring(8))).Description + "\n");
                     return;
                 }
+                if(currentLocation.GetNpcs().Exists(x => x.GetName().ToLower().Equals(command.ToLower().Substring(8))))
+                    {
+                        Console.WriteLine("\n" + currentLocation.GetNpcs().Find(x => x.GetName().ToLower().Equals(command.ToLower().Substring(8))).GetDescription() + "\n");
+                        return;
+                    }
                 else
                 {
                     Console.WriteLine("\nThat item does not exist in this location or your inventory.\n");
@@ -303,15 +310,84 @@ namespace TextAdventure
                 }
             }
 
+            //Speak
+            if((command.Length >= 5) && (command.Substring(0, 5) == "speak"))
+            {
+                if(command == "speak")
+                    {
+                        Console.WriteLine("\nI can't speak with myself.");
+                        return;
+                    }
+                if(currentLocation.GetNpcs().Exists(x => x.GetName().ToLower().Equals(command.ToLower().Substring(6))))
+                    {
+                        Console.WriteLine("\n" + currentLocation.GetNpcs().Find(x => x.GetName().ToLower().Equals(command.ToLower().Substring(6))).GetAnswer() + "\n");
+                        return;
+                    }
+            }
+
+            //Speak(s)
+            if((command.Length >= 2) && (command.Substring(0, 2) == "sp"))
+            {
+                if(command == "sp")
+                    {
+                        Console.WriteLine("\nI can't speak with myself.");
+                        return;
+                    }
+                if(currentLocation.GetNpcs().Exists(x => x.GetName().ToLower().Equals(command.ToLower().Substring(3))))
+                    {
+                        Console.WriteLine("\n" + currentLocation.GetNpcs().Find(x => x.GetName().ToLower().Equals(command.ToLower().Substring(3))).GetAnswer() + "\n");
+                        return;
+                    }
+            }
+
+            //Attack
+            if((command.Length >= 6) && (command.ToLower().Substring(0, 6) == "attack"))
+            {
+                if(command == "attack")
+                    {
+                        Console.WriteLine("\nYou can't attack nobody.");
+                        return;
+                    }
+                if(currentLocation.GetNpcs().Exists(x => x.GetName().ToLower().Equals(command.ToLower().Substring(7))))
+                {
+                    currentEnemy = currentLocation.GetNpcs().Find(x => x.GetName().ToLower() == command.ToLower().Substring(7));
+
+                    if(currentEnemy.GetFightable() == true)
+                    {
+                        if(player.GetHealth() > 0)
+                        {
+                            if(currentEnemy.GetHealth() > 0)
+                            {
+                                currentEnemy.ReduceHealth();
+                                player.ReduceHealth();
+                            } 
+                        }
+                        if(player.GetHealth() > 0)
+                        {
+                            if(currentEnemy.GetHealth() <= 0)
+                            {
+                                Console.WriteLine(currentEnemy.GetName() + " died.");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("You died!");
+                            _gameOver = true;
+                            Update();
+                        }
+                    }
+                }
+            }
+
             //moving
-            if (moveRoom(command))
+            if (MoveRoom(command))
                 return;
 
             Console.WriteLine("\nThis can't be done. Try 'help(h)' instead.\n");
         }
 
         //moving
-        private bool moveRoom(string command)
+        private bool MoveRoom(string command)
         {
             foreach (Exit exit in currentLocation.getExits())
             {
@@ -319,7 +395,7 @@ namespace TextAdventure
                 {
                     currentLocation = exit.getLeadsTo();
                     Console.WriteLine("\nYou move " + exit.ToString() + " to the:\n");
-                    showLocation();
+                    ShowLocation();
                     return true;
                 }
             }
@@ -349,7 +425,7 @@ namespace TextAdventure
         } */
 
         //show the inventory
-        private void showInventory()
+        private void ShowInventory()
         {
             if (inventory.Count > 0)
             {
@@ -380,7 +456,7 @@ namespace TextAdventure
 
             if (!_gameOver)
             {
-                doAction(currentCommand);
+                Action(currentCommand);
                 turnCounter = turnCounter + 1;
             }
             else

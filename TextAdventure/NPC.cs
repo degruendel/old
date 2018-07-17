@@ -10,29 +10,32 @@ namespace TextAdventure
         private string description;
         private string answer;
         private int health;
-        private Location currentRoom;
+        private Location currentLocation;
         private List<Item> inventory;
+        Random r = new Random();
+        int damage;
+        
 
-        public Npc(string _name, string _description, bool _fightable, string _answer, int _health, Location _currentRoom)
+        public Npc(string _name, string _description, bool _fightable, string _answer, int _health, Location _currentLocation)
         {
             name = _name;
             fightable = _fightable;
             description = _description;
             answer = _answer;
             health = _health;
-            currentRoom = _currentRoom;
+            currentLocation = _currentLocation;
             inventory = new List<Item>();
         }
-
-        public void ChangeCurrentRoom(Location room)
+    
+        public void ChangeCurrentRoom(Location location)
         {
-            currentRoom = room;
+            currentLocation = location;
             return;
         }
 
         public Location GetCurrentRoom()
         {
-            return currentRoom;
+            return currentLocation;
         }
 
         public string GetName()
@@ -62,7 +65,8 @@ namespace TextAdventure
 
         public void ReduceHealth()
         {
-            health = health - 15;
+            damage = r.Next(10,90);
+            health = health - damage;
         }
 
         public List<Item> GetInventory()
